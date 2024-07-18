@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import styles from "./CityItem.module.css";
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -8,7 +7,6 @@ const formatDate = (date) =>
   }).format(new Date(date));
 function CityItem({ city }) {
   const { cityName, emoji, date } = city;
-  console.log(city);
 
   return (
     <li className={styles.cityItem}>
