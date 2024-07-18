@@ -1,4 +1,6 @@
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./City.module.css";
+import Button from "./Button";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -18,7 +20,9 @@ function City() {
   };
 
   const { cityName, emoji, date, notes } = currentCity;
-
+  /*   const { cityId } = useParams();
+   */
+  const navigate = useNavigate();
   return (
     <div className={styles.city}>
       <div className={styles.row}>
@@ -51,9 +55,11 @@ function City() {
         </a>
       </div>
 
-      {/*  <div>
-        <ButtonBack />
-      </div> */}
+      <div>
+        <Button type={"back"} onClick={() => navigate(-1)}>
+          &larr; Back
+        </Button>
+      </div>
     </div>
   );
 }
