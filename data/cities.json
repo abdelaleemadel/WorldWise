@@ -36,66 +36,6 @@
         "lng": 13.376933665713324
       },
       "id": "98443197"
-    },
-    {
-      "id": "a929",
-      "cityName": "Peralta",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-07-23T07:18:05.503Z",
-      "notes": "what about your first oscar",
-      "position": {
-        "lat": "42.35854391749705",
-        "lng": "-1.8017578125000002"
-      }
-    },
-    {
-      "id": "90d4",
-      "cityName": "Villadiego",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-07-23T07:20:17.123Z",
-      "notes": "new",
-      "position": {
-        "lat": "42.52069952914966",
-        "lng": "-4.130859375000001"
-      }
-    },
-    {
-      "id": "46e8",
-      "cityName": "Mawqaq",
-      "country": "Saudi Arabia",
-      "emoji": "🇸🇦",
-      "date": "2024-07-23T07:21:55.663Z",
-      "notes": "KSA",
-      "position": {
-        "lat": "27.410785702577023",
-        "lng": "41.22070312500001"
-      }
-    },
-    {
-      "id": "6cc4",
-      "cityName": "Recuerda",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-07-23T07:24:57.908Z",
-      "notes": "",
-      "position": {
-        "lat": "41.42625319507272",
-        "lng": "-2.9882812500000004"
-      }
-    },
-    {
-      "id": "0ab6",
-      "cityName": "Qalyub",
-      "country": "Egypt",
-      "emoji": "🇪🇬",
-      "date": "2024-07-23T07:26:54.526Z",
-      "notes": "",
-      "position": {
-        "lat": "30.19578212146431",
-        "lng": "31.24511986970902"
-      }
     }
   ]
 }
