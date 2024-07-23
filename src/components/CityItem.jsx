@@ -13,7 +13,6 @@ function CityItem({ city }) {
 
   function handleDelete(e) {
     e.preventDefault();
-    console.log(id);
     deleteCity(id);
   }
   return (
