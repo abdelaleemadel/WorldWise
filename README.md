@@ -52,5 +52,7 @@ npm run dev
 
 <hr/>
 !WorldWise Web App
+
 Feel free to explore the code and customize it further! If you have any questions or need additional assistance, don't hesitate to ask. Good luck with your project! 😊
+
 You can find the project on here. <a href="https://world-wise-eta-seven.vercel.app/" target="_blank"> WorldWise </a>
