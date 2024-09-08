@@ -51,6 +51,7 @@ npm run dev
 4. View and manage your trip entries
 
 <hr/>
+
 !WorldWise Web App
 
 Feel free to explore the code and customize it further! If you have any questions or need additional assistance, don't hesitate to ask. Good luck with your project! 😊
