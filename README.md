@@ -32,8 +32,7 @@ npm install
 
 4. **Use your Database**
 
-Use your supabaseUrl and supabaseKey to store cities, each city table should has the following properties {id, cityName, country, emoji, flag, date, notes, position:{lat, lng}}
-Use your own 5. **Run the application**
+Use your supabaseUrl and supabaseKey to store cities, each city table should has the following properties {id, cityName, country, emoji, flag, date, notes, position:{lat, lng}} 5. **Run the application**
 
 ```bash
 npm run dev
@@ -49,6 +48,7 @@ npm run dev
 
 4. View and manage your trip entries
 
+</hr>
 !WorldWise Web App
 Feel free to explore the code and customize it further! If you have any questions or need additional assistance, don't hesitate to ask. Good luck with your project! 😊
-You can find the project on here. <a href="https://world-wise-gamma-three.vercel.app/" target="_blank"> WorldWise </a>
+You can find the project on here. <a href="https://world-wise-eta-seven.vercel.app/" target="_blank"> WorldWise </a>
