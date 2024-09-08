@@ -6,6 +6,7 @@ import { useCities } from "../contexts/CitiesProvider";
 
 function CountryList() {
   const { cities, isLoading } = useCities();
+
   if (isLoading) return <Spinner />;
 
   const countries = [

@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import supabase from "../services/supabase.js";
 
-const BASE_URL = "https://world-wise-gamma-three.vercel.app/app";
+/* "https://my-json-server.typicode.com/abdelaleemadel/worldwise-cities"; */
 
 const CitiesContext = createContext();
 
@@ -12,63 +13,49 @@ function CitiesProvider({ children }) {
   /* Fetching cities and set them into the cities state */
   useEffect(function () {
     async function fetchCities() {
-      try {
-        setIsLoading(true);
-        const res = await fetch(`${BASE_URL}/cities`);
-        const data = await res.json();
-        setCities(data);
-      } catch (err) {
-        console.log(err);
-      } finally {
-        setIsLoading(false);
-      }
+      setIsLoading(true);
+      let { data: cities, error } = await supabase.from("cities").select("*");
+      error ? console.log(error) : "";
+      setCities(cities);
+      setIsLoading(false);
     }
 
     fetchCities();
   }, []);
 
   async function getCity(id) {
-    try {
-      setIsLoading(true);
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await res.json();
-      setCurrentCity(data);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setIsLoading(false);
-    }
+    setIsLoading(true);
+    let { data: city, error } = await supabase
+      .from("cities")
+      .select("*")
+      .eq("id", id)
+      .single();
+    error ? console.log(error) : "";
+    setCurrentCity(city);
+    setIsLoading(false);
   }
+
   async function deleteCity(id) {
-    try {
-      setIsLoading(true);
-      await fetch(`${BASE_URL}/cities/${id}`, { method: "DELETE" });
-      setCities((cities) => cities.filter((city) => city.id !== id));
-    } catch (err) {
-      alert("There was an error deleting the city");
-    } finally {
-      setIsLoading(false);
-    }
+    setIsLoading(true);
+    let { error } = await supabase.from("cities").delete().eq("id", id);
+
+    error
+      ? console.log(error)
+      : setCities((cities) => [...cities.filter((city) => city.id != id)]);
+
+    setIsLoading(false);
   }
 
   async function createCity(newCity) {
-    try {
-      setIsLoading(true);
-      const res = await fetch(`${BASE_URL}/cities`, {
-        method: "POST",
-        body: JSON.stringify(newCity),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+    setIsLoading(true);
+    const { data, error } = await supabase
+      .from("cities")
+      .insert([newCity])
+      .select();
 
-      const data = await res.json();
-      setCities((cities) => [...cities, data]);
-    } catch (err) {
-      alert("There's an error adding a new City");
-    } finally {
-      setIsLoading(false);
-    }
+    setCities((cities) => [...cities, data[0]]);
+    error ? console.log(error) : "";
+    setIsLoading(false);
   }
 
   return (
